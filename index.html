@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#05060d">
+<title>ソラトモシ ～六灯の旅路～</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game" tabindex="-1">
+  <div id="stage"></div>
+  <div id="title" aria-label="タイトル画面">
+    <div class="logo"><h1>ソラトモシ</h1><p>～六灯の旅路～</p></div>
+    <div class="copy">© 2026 Studio Hoshiakari ― オリジナル作品</div>
+  </div>
+  <div id="ui"></div>
+  <div id="credits" aria-live="polite"></div>
+  <div id="fade"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="loading"><div class="lt">読み込み中…</div><div class="lb"><i id="loadbar"></i></div></div>
+</div>
+<div id="pad" aria-label="タッチ操作ボタン">
+  <div class="dpad">
+    <button type="button" class="up" data-act="up" aria-label="上">▲</button>
+    <button type="button" class="left" data-act="left" aria-label="左">◀</button>
+    <button type="button" class="right" data-act="right" aria-label="右">▶</button>
+    <button type="button" class="down" data-act="down" aria-label="下">▼</button>
+  </div>
+  <div class="abtns">
+    <button type="button" class="menu" data-act="menu" aria-label="メニュー">MENU</button>
+    <button type="button" class="b" data-act="cancel" aria-label="キャンセル">B</button>
+    <button type="button" class="a" data-act="ok" aria-label="決定">A</button>
+  </div>
+</div>
+<div id="live" class="sr-only" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@8/dist/pixi.min.js"></script>
+<script src="assets/manifest.js"></script>
+<script>
+  // http 配信時はファイルから直接読み込むため、埋め込み画像（約3MB）は file:// のときだけ読む
+  if (!/^https?:$/.test(location.protocol)) document.write('<script src="assets/bundle.js"><\/script>');
+</script>
+<script src="js/text.js"></script>
+<script src="js/data.js"></script>
+<script src="js/maps.js"></script>
+<script src="js/core.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/input.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/render.js"></script>
+<script src="js/field.js"></script>
+<script src="js/battle_core.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/menus.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
